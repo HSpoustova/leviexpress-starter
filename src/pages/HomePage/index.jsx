@@ -1,5 +1,6 @@
 import { JourneyPicker } from '../../components/JourneyPicker';
 import { useState } from 'react';
+import { JournalDetail } from '../../components/JournalDetail';
 
 export const HomePage = () => {
   const [journey, setJourney] = useState(null);
@@ -14,6 +15,7 @@ export const HomePage = () => {
       {journey === null ? null : (
         <p>Nalezeno spojeni s id {journey.journeyId}</p>
       )}
+      {journey === null ? null : <JournalDetail journey={journey} />}
     </main>
   );
 };
